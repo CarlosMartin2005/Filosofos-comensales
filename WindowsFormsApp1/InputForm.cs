@@ -21,7 +21,7 @@ namespace WindowsFormsApp1
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(textBoxCantidad.Text, out int comida) && comida > 0 && comida < 10)
+            if (int.TryParse(textBoxCantidad.Text, out int comida) && comida > 0 && comida <= 10)
             {
                 CantidadComida = comida;
 
@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                MessageBox.Show("Entrada inválida. Por favor, ingrese un número mayor a 0 y menor a 10.", "Error de entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Entrada inválida. Por favor, ingrese un número mayor a 0 y menor a 11.", "Error de entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -21,7 +21,6 @@ namespace WindowsFormsApp1
             this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
-
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Text = "Problema de los filósofos comensales";
@@ -29,7 +28,6 @@ namespace WindowsFormsApp1
 
         private void label1_Click(object sender, EventArgs e)
         {
-            cantidadFilosofos.Font = new Font("Arial", 20, FontStyle.Bold);
         }
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
@@ -46,7 +44,7 @@ namespace WindowsFormsApp1
 
                     form2.Show();
 
-                    this.Hide();
+                    Form1.ActiveForm.Hide();
                 }
                 else
                 {

@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
         public void Pensar()
         {
             Console.WriteLine($"{Nombre} está pensando.");
-            Thread.Sleep(random.Next(1000, 5000)); // Pausar el hilo por un tiempo aleatorio entre 1 y 5 segundos
+            Thread.Sleep(5000); // Pausar el hilo 5 segundos
             Console.WriteLine($"{Nombre} ha terminado de pensar.");
         }
 
@@ -52,8 +52,8 @@ namespace WindowsFormsApp1
                     TenedorDerecho.Tomar();
                     Console.WriteLine($"Filosofo {Nombre} ha tomado el tenedor derecho");
 
-                    Console.WriteLine($"Filosofo {Nombre} está comiendo");
-                    Thread.Sleep(new Random().Next(1000, 5000)); // Pausar el hilo por un tiempo aleatorio entre 1 y 5 segundos
+                    Console.WriteLine($"Filosofo {Nombre} está comiendo un bocado");
+                    Thread.Sleep(5000); // Pausar el hilo 5 segundos
                     CantidadComida--;
 
                     TenedorIzquierdo.Dejar();

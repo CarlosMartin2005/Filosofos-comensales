@@ -118,13 +118,31 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="terminado 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\terminado 2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondo fcom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondo fcom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fondo fc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo fc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondo fco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo fco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fondo fcom" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fondo fcom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="comiendo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\comiendo1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pensando" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pensando1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="terminado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\terminado.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pensando1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pensando.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="comiendo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\comiendo.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -63,6 +63,7 @@
             // 
             // InputForm
             // 
+            this.AcceptButton = this.btn_Aceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(353, 163);
@@ -70,7 +71,8 @@
             this.Controls.Add(this.btn_Aceptar);
             this.Controls.Add(this.labelMensaje);
             this.Name = "InputForm";
-            this.Text = "InputForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ingrese la cantidad de comida";
             this.Load += new System.EventHandler(this.InputForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

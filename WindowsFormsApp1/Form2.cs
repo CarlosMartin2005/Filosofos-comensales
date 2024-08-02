@@ -13,16 +13,19 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
+
         private int cantidadint;
         private List<string> nombresFilosofos;
         private List<Filosofo> filosofos;
         private List<Tenedor> tenedores;
-        private List<Task> tareas;
+        private List<Thread> hilos;
         private CancellationTokenSource cts;
         private SemaphoreSlim semaforo;
 
         public Form2(int cantidadint)
         {
+            this.Show();
+
             InitializeComponent();
 
             this.cantidadint = cantidadint;
@@ -33,19 +36,22 @@ namespace WindowsFormsApp1
 
             semaforo = new SemaphoreSlim(cantidadint / 2); // Permitir que la mitad de los filósofos coman al mismo tiempo
 
-            // Crear tareas
-            tareas = new List<Task>();
+            // Crear hilos
+            hilos = new List<Thread>();
             foreach (Filosofo filosofo in filosofos)
             {
-                var tarea = Task.Run(() => EjecutarFilosofo(filosofo, cts.Token, semaforo));
-                tareas.Add(tarea);
+                filosofo.Pensar();
+                var hilo = new Thread(() => EjecutarFilosofo(filosofo, cts.Token, semaforo));
+                hilos.Add(hilo);
+                hilo.Start();
             }
 
-            // Esperar a que todas las tareas terminen
-            Task.WhenAll(tareas).ContinueWith(t =>
+            // Esperar a que todos los hilos terminen
+            foreach (Thread hilo in hilos)
             {
-                Console.WriteLine("Todos los filósofos han terminado de comer.");
-            });
+                hilo.Join();
+            }
+            Console.WriteLine("Todos los filósofos han terminado de comer.");
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -98,23 +104,17 @@ namespace WindowsFormsApp1
                 Filosofo filosofo = new Filosofo(i + 1, nombresFilosofos[i], cantidadComida, tenedorIzquierdo, tenedorDerecho);
                 filosofos.Add(filosofo);
             }
+
             return filosofos;
         }
 
-        private async Task EjecutarFilosofo(Filosofo filosofo, CancellationToken token, SemaphoreSlim semaforo)
+        private void EjecutarFilosofo(Filosofo filosofo, CancellationToken token, SemaphoreSlim semaforo)
         {
             while (filosofo.CantidadComida > 0 && !token.IsCancellationRequested)
             {
                 // Esperar a que termine de comer un filósofo
-                await Task.Run(() => filosofo.Comer(semaforo), token);
+                filosofo.Comer(semaforo);
             }
-        }
-
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            // Cancelar todas las tareas cuando el formulario se esté cerrando
-            cts.Cancel();
-            base.OnFormClosing(e);
         }
     }
 }
