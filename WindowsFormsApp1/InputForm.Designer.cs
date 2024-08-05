@@ -55,6 +55,7 @@
             // 
             // textBoxCantidad
             // 
+            this.textBoxCantidad.HideSelection = false;
             this.textBoxCantidad.Location = new System.Drawing.Point(166, 62);
             this.textBoxCantidad.Name = "textBoxCantidad";
             this.textBoxCantidad.Size = new System.Drawing.Size(38, 20);

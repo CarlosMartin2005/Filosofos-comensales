@@ -41,9 +41,9 @@ namespace WindowsFormsApp1
         {
             while (CantidadComida > 0)
             {
-                semaforo.Wait(); // Esperar a que el semáforo esté disponible
                 try
                 {
+                    semaforo.Wait(); // Esperar a que el semáforo esté disponible
                     Pensar(); // Filósofo piensa
 
                     Console.WriteLine($"Filosofo {Nombre} está hambriento");

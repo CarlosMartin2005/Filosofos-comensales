@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -22,10 +23,15 @@ namespace WindowsFormsApp1
         private CancellationTokenSource cts;
         private SemaphoreSlim semaforo;
 
+        private List<PictureBox> pictureBoxesFilosofos;
+        private List<Label> labelsEstadosFilosofos;
+        private List<PictureBox> pictureBoxesTenedores;
+
+        private System.Windows.Forms.Timer timer;
+
         public Form2(int cantidadint)
         {
             this.Show();
-
             InitializeComponent();
 
             this.cantidadint = cantidadint;
@@ -35,6 +41,11 @@ namespace WindowsFormsApp1
             filosofos = CrearFilosofos(cantidadint, nombresFilosofos, tenedores);
 
             semaforo = new SemaphoreSlim(cantidadint / 2); // Permitir que la mitad de los filósofos coman al mismo tiempo
+
+            // Inicializar componentes gráficos
+            pictureBoxesFilosofos = new List<PictureBox>();
+            labelsEstadosFilosofos = new List<Label>();
+            pictureBoxesTenedores = new List<PictureBox>();
 
             // Crear hilos
             hilos = new List<Thread>();
@@ -115,6 +126,11 @@ namespace WindowsFormsApp1
                 // Esperar a que termine de comer un filósofo
                 filosofo.Comer(semaforo);
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
         }
     }
 }

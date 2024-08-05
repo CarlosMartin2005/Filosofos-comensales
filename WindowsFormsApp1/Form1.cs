@@ -40,11 +40,11 @@ namespace WindowsFormsApp1
                     Console.WriteLine("Cantidad de filosofos ingresados: " + cantidadint);
                     MessageBox.Show("Cantidad de filosofos ingresados: " + cantidadint, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    this.Hide();
                     Form2 form2 = new Form2(cantidadint);
+                    form2.FormClosed += (s, args) => this.Close(); // Cerrar Form1 cuando Form2 se cierra
 
                     form2.Show();
-
-                    Form1.ActiveForm.Hide();
                 }
                 else
                 {
@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("ERROR "+ex, "Se produjo un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
     }
 }
