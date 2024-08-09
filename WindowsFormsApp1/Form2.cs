@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,7 +15,6 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
-
         private int cantidadint;
         private List<string> nombresFilosofos;
         private List<Filosofo> filosofos;
@@ -23,18 +23,24 @@ namespace WindowsFormsApp1
         private CancellationTokenSource cts;
         private SemaphoreSlim semaforo;
 
-        private List<PictureBox> pictureBoxesFilosofos;
-        private List<Label> labelsEstadosFilosofos;
-        private List<PictureBox> pictureBoxesTenedores;
+        //private System.Windows.Forms.Timer timer;
+        private Dictionary<int, PictureBox> pictureBoxMap;
 
-        private System.Windows.Forms.Timer timer;
 
         public Form2(int cantidadint)
         {
-            this.Show();
             InitializeComponent();
-
             this.cantidadint = cantidadint;
+
+            // Configurar Form2_Load para manejar el evento de carga
+            this.Load += new System.EventHandler(this.Form2_Load);
+
+            // Iniciar la lógica de los filósofos en un hilo separado
+            Task.Run(() => IniciarFilosofo());
+        }
+
+        private void IniciarFilosofo()
+        {
             cts = new CancellationTokenSource();
             nombresFilosofos = ObtenerNombresFilosofos();
             tenedores = CrearTenedores(cantidadint);
@@ -42,16 +48,10 @@ namespace WindowsFormsApp1
 
             semaforo = new SemaphoreSlim(cantidadint / 2); // Permitir que la mitad de los filósofos coman al mismo tiempo
 
-            // Inicializar componentes gráficos
-            pictureBoxesFilosofos = new List<PictureBox>();
-            labelsEstadosFilosofos = new List<Label>();
-            pictureBoxesTenedores = new List<PictureBox>();
-
             // Crear hilos
             hilos = new List<Thread>();
             foreach (Filosofo filosofo in filosofos)
             {
-                filosofo.Pensar();
                 var hilo = new Thread(() => EjecutarFilosofo(filosofo, cts.Token, semaforo));
                 hilos.Add(hilo);
                 hilo.Start();
@@ -62,12 +62,61 @@ namespace WindowsFormsApp1
             {
                 hilo.Join();
             }
+
             Console.WriteLine("Todos los filósofos han terminado de comer.");
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            MessageBox.Show("Yepa ya estoy por aquí" + cantidadint, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            // Inicializar el diccionario de PictureBoxes
+            pictureBoxMap = new Dictionary<int, PictureBox>
+            {
+                { 0, pictureBox12 },
+                { 1, pictureBox13 },
+                { 2, pictureBox14 },
+                { 3, pictureBox15 },
+                { 4, pictureBox16 },
+                { 5, pictureBox17 },
+                { 6, pictureBox18 },
+                { 7, pictureBox19 },
+                { 8, pictureBox20 },
+                { 9, pictureBox21 }
+            };
+
+            // Mostrar solo los PictureBox necesarios
+            for (int i = 0; i < tenedores.Count; i++)
+            {
+                ActualizarUI(pictureBoxMap[i]);
+                Console.WriteLine("PictueBox puesto con éxito");
+            }
+
+            // Ocultar los PictureBox restantes si hay más PictureBox que tenedores
+            for (int i = tenedores.Count; i < pictureBoxMap.Count; i++)
+            {
+                pictureBoxMap[i].Visible = false;
+            }
+        }
+
+        private void ActualizarUI(PictureBox pictureBox)
+        {
+            if (!InvokeRequired)
+            {
+                this.Invoke((MethodInvoker)delegate {
+                    pictureBox.Image = Image.FromFile("Resources\\tenedor.png");
+                    pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // Ajusta la imagen para que se estire y ocupe todo el PictureBox
+                    pictureBox.Visible = true;
+                    pictureBox.BackColor = Color.Beige;
+                    pictureBox.BringToFront();
+                });
+            }
+            else
+            {
+                pictureBox.BackColor = Color.Red;
+                pictureBox.Visible = true;
+                pictureBox.BringToFront();
+            }
         }
 
         public static int SolicitarCantidadComida(string nombreFilosofo)
@@ -128,9 +177,14 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void pictureBox19_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

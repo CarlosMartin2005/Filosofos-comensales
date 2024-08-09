@@ -130,19 +130,22 @@
   <data name="fondo fco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo fco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="terminado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\terminado.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="comiendo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\comiendo1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="comiendo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\comiendo.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pensando" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pensando1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="terminado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\terminado.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pensando1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pensando.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="comiendo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\comiendo.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mesa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mesa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

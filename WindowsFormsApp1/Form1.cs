@@ -26,10 +26,6 @@ namespace WindowsFormsApp1
             this.Text = "Problema de los filósofos comensales";
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-        }
-
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
             string cantidad = textBox1.Text;

@@ -71,6 +71,7 @@
             this.Controls.Add(this.textBoxCantidad);
             this.Controls.Add(this.btn_Aceptar);
             this.Controls.Add(this.labelMensaje);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "InputForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingrese la cantidad de comida";

@@ -46,7 +46,6 @@
             this.cantidadFilosofos.TabIndex = 0;
             this.cantidadFilosofos.Text = "Ingrese la cantidad de filósofos: ";
             this.cantidadFilosofos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.cantidadFilosofos.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
@@ -90,6 +89,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 384);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
