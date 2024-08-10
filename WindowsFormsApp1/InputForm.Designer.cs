@@ -41,7 +41,6 @@
             this.labelMensaje.Size = new System.Drawing.Size(25, 13);
             this.labelMensaje.TabIndex = 0;
             this.labelMensaje.Text = "===";
-            this.labelMensaje.Click += new System.EventHandler(this.label1_Click);
             // 
             // btn_Aceptar
             // 
@@ -61,6 +60,7 @@
             this.textBoxCantidad.Size = new System.Drawing.Size(38, 20);
             this.textBoxCantidad.TabIndex = 2;
             this.textBoxCantidad.Text = "0";
+            this.textBoxCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCantidad_KeyPress);
             // 
             // InputForm
             // 
@@ -72,9 +72,12 @@
             this.Controls.Add(this.btn_Aceptar);
             this.Controls.Add(this.labelMensaje);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "InputForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingrese la cantidad de comida";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.InputForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

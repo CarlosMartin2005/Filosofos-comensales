@@ -23,8 +23,10 @@ namespace WindowsFormsApp1
         private CancellationTokenSource cts;
         private SemaphoreSlim semaforo;
 
-        //private System.Windows.Forms.Timer timer;
-        private Dictionary<int, PictureBox> pictureBoxMap;
+        private Dictionary<int, PictureBox> pictureBoxTenedoresMap;
+        private Dictionary<int, PictureBox> pictureBoxFilosofosMap;
+        private Dictionary<int, PictureBox> pictureBoxPlatosMap;
+        private Dictionary<int, Label> labelFilosofosMap;
 
 
         public Form2(int cantidadint)
@@ -32,21 +34,18 @@ namespace WindowsFormsApp1
             InitializeComponent();
             this.cantidadint = cantidadint;
 
-            // Configurar Form2_Load para manejar el evento de carga
-            this.Load += new System.EventHandler(this.Form2_Load);
-
             // Iniciar la lógica de los filósofos en un hilo separado
             Task.Run(() => IniciarFilosofo());
         }
 
         private void IniciarFilosofo()
         {
-            cts = new CancellationTokenSource();
-            nombresFilosofos = ObtenerNombresFilosofos();
-            tenedores = CrearTenedores(cantidadint);
-            filosofos = CrearFilosofos(cantidadint, nombresFilosofos, tenedores);
+            cts = new CancellationTokenSource(); // Crear token de cancelación
+            nombresFilosofos = ObtenerNombresFilosofos(); // Obtener nombres de los filósofos
+            tenedores = CrearTenedores(cantidadint, this); // Crear tenedores
+            filosofos = CrearFilosofos(cantidadint, nombresFilosofos, tenedores, pictureBoxFilosofosMap, labelFilosofosMap, this); // Crear filósofos
 
-            semaforo = new SemaphoreSlim(cantidadint / 2); // Permitir que la mitad de los filósofos coman al mismo tiempo
+            semaforo = new SemaphoreSlim(cantidadint); // Crear semáforo
 
             // Crear hilos
             hilos = new List<Thread>();
@@ -64,14 +63,58 @@ namespace WindowsFormsApp1
             }
 
             Console.WriteLine("Todos los filósofos han terminado de comer.");
+            MessageBox.Show("Todos los filósofos han terminado de comer.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Yepa ya estoy por aquí" + cantidadint, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Inicializar el diccionario de Labels de estados
+            labelFilosofosMap = new Dictionary<int, Label>
+            {
+                { 0, label1 },
+                { 1, label2 },
+                { 2, label3 },
+                { 3, label4 },
+                { 4, label5 },
+                { 5, label6 },
+                { 6, label7 },
+                { 7, label8 },
+                { 8, label9 },
+                { 9, label10 }
+            };
 
-            // Inicializar el diccionario de PictureBoxes
-            pictureBoxMap = new Dictionary<int, PictureBox>
+            // Inicializar el diccionario de PictureBoxes de filósofos
+            pictureBoxFilosofosMap = new Dictionary<int, PictureBox>
+            {
+                { 0, pictureBox1 },
+                { 1, pictureBox2 },
+                { 2, pictureBox3 },
+                { 3, pictureBox4 },
+                { 4, pictureBox5 },
+                { 5, pictureBox6 },
+                { 6, pictureBox7 },
+                { 7, pictureBox8 },
+                { 8, pictureBox9 },
+                { 9, pictureBox10 }
+            };
+
+            // Inicializar el diccionario de PictureBoxes de platos
+            pictureBoxPlatosMap = new Dictionary<int, PictureBox>
+            {
+                { 0, pictureBox22 },
+                { 1, pictureBox23 },
+                { 2, pictureBox24 },
+                { 3, pictureBox25 },
+                { 4, pictureBox26 },
+                { 5, pictureBox27 },
+                { 6, pictureBox28 },
+                { 7, pictureBox29 },
+                { 8, pictureBox30 },
+                { 9, pictureBox31 }
+            };
+
+            // Inicializar el diccionario de PictureBoxes de tenedores
+            pictureBoxTenedoresMap = new Dictionary<int, PictureBox>
             {
                 { 0, pictureBox12 },
                 { 1, pictureBox13 },
@@ -85,37 +128,73 @@ namespace WindowsFormsApp1
                 { 9, pictureBox21 }
             };
 
-            // Mostrar solo los PictureBox necesarios
+            // var res = MessageBox.Show("Mostrar los filósofos comensales", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            if (tenedores == null)
+            {
+                MessageBox.Show("La lista de tenedores no se ha inicializado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Ocultar todos los labels al inicio
+            foreach (var label in labelFilosofosMap.Values)
+            {
+                label.Visible = false;
+            }
+
+            // Mostrar solo los labels necesarios
             for (int i = 0; i < tenedores.Count; i++)
             {
-                ActualizarUI(pictureBoxMap[i]);
-                Console.WriteLine("PictueBox puesto con éxito");
+                labelFilosofosMap[i].Visible = true;
+            }
+            
+            // Mostrar solo los PictureBox de platos necesarios
+            for (int i = 0; i < tenedores.Count; i++)
+            {
+                pictureBoxPlatosMap[i].Visible = true;
+            }
+
+            // Ocultar los PictureBox restantes si hay más PictureBox que filósofos
+            for (int i = tenedores.Count; i < pictureBoxPlatosMap.Count; i++)
+            {
+                pictureBoxPlatosMap[i].Visible = false;
+            }
+
+            // Mostrar solo los PictureBox necesarios para los tenedores
+            for (int i = 0; i < tenedores.Count; i++)
+            {
+                ActualizarUITenedor(tenedores[i],pictureBoxTenedoresMap[i]);
             }
 
             // Ocultar los PictureBox restantes si hay más PictureBox que tenedores
-            for (int i = tenedores.Count; i < pictureBoxMap.Count; i++)
+            for (int i = tenedores.Count; i < pictureBoxTenedoresMap.Count; i++)
             {
-                pictureBoxMap[i].Visible = false;
+                pictureBoxTenedoresMap[i].Visible = false;
             }
         }
 
-        private void ActualizarUI(PictureBox pictureBox)
+        private void ActualizarUITenedor(Tenedor tenedor, PictureBox pictureBox)
         {
-            if (!InvokeRequired)
+            if (InvokeRequired)
             {
-                this.Invoke((MethodInvoker)delegate {
-                    pictureBox.Image = Image.FromFile("Resources\\tenedor.png");
-                    pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // Ajusta la imagen para que se estire y ocupe todo el PictureBox
-                    pictureBox.Visible = true;
-                    pictureBox.BackColor = Color.Beige;
-                    pictureBox.BringToFront();
-                });
+                this.Invoke((MethodInvoker)delegate { ActualizarUITenedor(tenedor, pictureBox); });
             }
             else
             {
-                pictureBox.BackColor = Color.Red;
-                pictureBox.Visible = true;
-                pictureBox.BringToFront();
+                if (tenedor.disponible == 0)
+                {
+                    pictureBox.Image = Image.FromFile("Resources\\tenedor.png");
+                    pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBox.Visible = true;
+                    pictureBox.BackColor = Color.White;
+                    pictureBox.BringToFront();
+                }
+                else
+                {
+                    pictureBox.Visible = true;
+                    pictureBox.BackColor = Color.Red;
+                    pictureBox.BringToFront();
+                }
             }
         }
 
@@ -129,6 +208,7 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
+                    MessageBox.Show("El usuario canceló la entrada de cantidad de comida, .", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     throw new OperationCanceledException("El usuario canceló la entrada de cantidad de comida.");
                 }
             }
@@ -143,17 +223,20 @@ namespace WindowsFormsApp1
             };
         }
 
-        static List<Tenedor> CrearTenedores(int cantidadFilosofos)
+        static List<Tenedor> CrearTenedores(int cantidadFilosofos, Form2 form2)
         {
             List<Tenedor> tenedores = new List<Tenedor>();
             for (int i = 0; i < cantidadFilosofos; i++)
             {
-                tenedores.Add(new Tenedor());
+                Tenedor tenedor = new Tenedor();
+                int index = i; // Capturar la variable i
+                tenedor.EstadoCambiado += (sender, e) => form2.ActualizarUITenedor(tenedor, form2.pictureBoxTenedoresMap[index]);
+                tenedores.Add(tenedor);
             }
             return tenedores;
         }
 
-        static List<Filosofo> CrearFilosofos(int cantidadFilosofos, List<string> nombresFilosofos, List<Tenedor> tenedores)
+        static List<Filosofo> CrearFilosofos(int cantidadFilosofos, List<string> nombresFilosofos, List<Tenedor> tenedores, Dictionary<int, PictureBox> pictureBoxFilosofosMap, Dictionary<int, Label> labelFilosofosMap, Form2 form2)
         {
             List<Filosofo> filosofos = new List<Filosofo>();
             for (int i = 0; i < cantidadFilosofos; i++)
@@ -162,29 +245,83 @@ namespace WindowsFormsApp1
                 Tenedor tenedorDerecho = tenedores[(i + 1) % cantidadFilosofos];
                 int cantidadComida = SolicitarCantidadComida(nombresFilosofos[i]);
                 Filosofo filosofo = new Filosofo(i + 1, nombresFilosofos[i], cantidadComida, tenedorIzquierdo, tenedorDerecho);
+
+                // Actualizar el estado del filósofo junto con el PictureBox correspondiente
+                int index = i; // Capturar la variable i
+                filosofo.OnEstadoCambiado += (sender, e) => form2.ActualizarUIFilosofo(filosofo, form2.pictureBoxFilosofosMap[index], form2.labelFilosofosMap[index]);
+
                 filosofos.Add(filosofo);
             }
 
             return filosofos;
         }
 
+        private void ActualizarUIFilosofo(Filosofo filosofo, PictureBox pictureBox, Label label)
+        {
+            if (InvokeRequired)
+            {
+                // Invocar el método de forma segura
+                Invoke((MethodInvoker)(() => ActualizarUIFilosofo(filosofo, pictureBox, label)));
+                return;
+            }
+
+            switch (filosofo.Estado)
+            {
+                case "Pensando":
+                    pictureBox.Image = Image.FromFile("Resources\\pensando.gif");
+                    label.Text = $"{filosofo.Nombre} está pensando...";
+                    break;
+                case "Hambriento":
+                    pictureBox.Image = Image.FromFile("Resources\\conhambre.gif");
+                    label.Text = $"{filosofo.Nombre} está hambriento...";
+
+                    break;
+                case "Comiendo":
+                    pictureBox.Image = Image.FromFile("Resources\\comiendo.gif");
+                    label.Text = $"{filosofo.Nombre} está comiendo un bocado...";
+
+                    break;
+                case "Terminado":
+                    pictureBox.Image = Image.FromFile("Resources\\terminado.gif");
+                    label.Text = $"{filosofo.Nombre} terminó de comer.";
+                    break;
+            }
+
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // Ajustar la imagen al PictureBox
+            pictureBox.BringToFront(); // Traer el PictureBox al frente
+
+            // Actualizar el plato correspondiente
+            if (pictureBoxPlatosMap.ContainsKey(filosofo.Numero - 1))
+            {
+                PictureBox pictureBoxPlato = pictureBoxPlatosMap[filosofo.Numero - 1];
+
+                // Determinar la imagen del plato según la cantidad de comida restante
+                if (filosofo.CantidadComida > 5)
+                {
+                    pictureBoxPlato.Image = Image.FromFile("Resources\\plato_lleno.png");
+                }
+                else if (filosofo.CantidadComida > 0)
+                {
+                    pictureBoxPlato.Image = Image.FromFile("Resources\\plato_medio.png");
+                }
+                else
+                {
+                    pictureBoxPlato.Image = Image.FromFile("Resources\\plato_vacio.png");
+                }
+
+                pictureBoxPlato.SizeMode = PictureBoxSizeMode.StretchImage;
+                pictureBoxPlato.BringToFront();
+            }
+        }
+
         private void EjecutarFilosofo(Filosofo filosofo, CancellationToken token, SemaphoreSlim semaforo)
         {
+            // Filósofo piensa y come mientras haya comida y no se haya cancelado el token
             while (filosofo.CantidadComida > 0 && !token.IsCancellationRequested)
             {
                 // Esperar a que termine de comer un filósofo
                 filosofo.Comer(semaforo);
             }
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox19_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
             private set
             {
                 estado = value;
+                // Disparar el evento OnEstadoCambiado y pasar el objeto actual (Filosofo) y un objeto EventArgs vacío
                 OnEstadoCambiado?.Invoke(this, EventArgs.Empty);
             }
         }
@@ -50,7 +51,7 @@ namespace WindowsFormsApp1
         {
             Estado = "Pensando";
             Console.WriteLine($"{Nombre} está pensando.");
-            Thread.Sleep(5000); // Pausar el hilo 5 segundos
+            Thread.Sleep(random.Next(3000, 5000)); // Pausar el hilo entre 3 y 5 segundos
             Console.WriteLine($"{Nombre} ha terminado de pensar.");
         }
 
@@ -65,7 +66,8 @@ namespace WindowsFormsApp1
                     Pensar(); // Filósofo piensa
 
                     Estado = "Hambriento";
-                    Console.WriteLine($"Filosofo {Nombre} está hambriento");
+                    Console.WriteLine($"Filosofo {Nombre} está hambriento pero no puede comer");
+                    Thread.Sleep(random.Next(2000, 5000)); // Pausar el hilo entre 2 y 5 segundos
                     TenedorIzquierdo.Tomar();
                     Console.WriteLine($"Filosofo {Nombre} ha tomado el tenedor izquierdo");
                     TenedorDerecho.Tomar();
@@ -73,7 +75,7 @@ namespace WindowsFormsApp1
 
                     Estado = "Comiendo";
                     Console.WriteLine($"Filosofo {Nombre} está comiendo un bocado");
-                    Thread.Sleep(5000); // Pausar el hilo 5 segundos
+                    Thread.Sleep(random.Next(3000, 5000)); // Pausar el hilo entre 3 y 5 segundos
                     CantidadComida--;
 
                     TenedorIzquierdo.Dejar();
@@ -86,7 +88,7 @@ namespace WindowsFormsApp1
                     semaforo.Release(); // Cambiar el semáforo a verde
                 }
             }
-            Estado = "Pensando";
+            Estado = "Terminado";
             Console.WriteLine($"{Nombre} ha terminado de comer  y está pensando.");
         }
     }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsApp1
 {
@@ -16,6 +17,8 @@ namespace WindowsFormsApp1
         public InputForm(string nombreFilosofo)
         {
             InitializeComponent();
+            this.Load += new EventHandler(InputForm_Load);
+
             labelMensaje.Text = $"Ingrese la cantidad de comida para {nombreFilosofo}: ";
         }
 
@@ -36,13 +39,20 @@ namespace WindowsFormsApp1
 
         private void InputForm_Load(object sender, EventArgs e)
         {
+            textBoxCantidad.SelectAll();
+            textBoxCantidad.Focus();
+            // Forzar que el formulario obtenga el foco
+            this.ActiveControl = textBoxCantidad;
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void textBoxCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            // Permitir solo números y la tecla de retroceso
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true; // Anula la pulsación de la tecla
+            }
         }
-
     }
 }
