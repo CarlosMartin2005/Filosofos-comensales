@@ -17,13 +17,14 @@ namespace WindowsFormsApp1
         public InputForm(string nombreFilosofo)
         {
             InitializeComponent();
-            this.Load += new EventHandler(InputForm_Load);
+            this.Load += new EventHandler(InputForm_Load); // Asignar el evento Load al formulario
 
             labelMensaje.Text = $"Ingrese la cantidad de comida para {nombreFilosofo}: ";
         }
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
+            // Verificar si la entrada es un número válido
             if (int.TryParse(textBoxCantidad.Text, out int comida) && comida > 0 && comida <= 10)
             {
                 CantidadComida = comida;

@@ -28,6 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.pictureBox35 = new System.Windows.Forms.PictureBox();
+            this.pictureBox34 = new System.Windows.Forms.PictureBox();
+            this.pictureBox33 = new System.Windows.Forms.PictureBox();
+            this.pictureBox32 = new System.Windows.Forms.PictureBox();
+            this.pictureBox31 = new System.Windows.Forms.PictureBox();
+            this.pictureBox30 = new System.Windows.Forms.PictureBox();
+            this.pictureBox29 = new System.Windows.Forms.PictureBox();
+            this.pictureBox28 = new System.Windows.Forms.PictureBox();
+            this.pictureBox27 = new System.Windows.Forms.PictureBox();
+            this.pictureBox26 = new System.Windows.Forms.PictureBox();
+            this.pictureBox25 = new System.Windows.Forms.PictureBox();
+            this.pictureBox24 = new System.Windows.Forms.PictureBox();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.pictureBox21 = new System.Windows.Forms.PictureBox();
@@ -51,24 +77,18 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox24 = new System.Windows.Forms.PictureBox();
-            this.pictureBox25 = new System.Windows.Forms.PictureBox();
-            this.pictureBox26 = new System.Windows.Forms.PictureBox();
-            this.pictureBox27 = new System.Windows.Forms.PictureBox();
-            this.pictureBox28 = new System.Windows.Forms.PictureBox();
-            this.pictureBox29 = new System.Windows.Forms.PictureBox();
-            this.pictureBox30 = new System.Windows.Forms.PictureBox();
-            this.pictureBox31 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
@@ -92,15 +112,237 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(515, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(131, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Sócrates está pensando...";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(692, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 13);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Platón está pensando...";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(950, 190);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 13);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Aristóteles está pensando...";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(950, 325);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(137, 13);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Descartes está pensando...";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(950, 451);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 13);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Kant está pensando...";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(692, 555);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(136, 13);
+            this.label6.TabIndex = 36;
+            this.label6.Text = "Nietzsche está pensando...";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(529, 555);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(117, 13);
+            this.label7.TabIndex = 37;
+            this.label7.Text = "Hegel está pensando...";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(260, 451);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(127, 13);
+            this.label8.TabIndex = 38;
+            this.label8.Text = "Spinoza está pensando...";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(260, 325);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(119, 13);
+            this.label9.TabIndex = 39;
+            this.label9.Text = "Locke está pensando...";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(260, 190);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(117, 13);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "Hume está pensando...";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(25, 30);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(93, 13);
+            this.label11.TabIndex = 41;
+            this.label11.Text = "Filósofo pensando";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(25, 147);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(98, 13);
+            this.label12.TabIndex = 42;
+            this.label12.Text = "Filósofo hambriento";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(25, 264);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(92, 13);
+            this.label13.TabIndex = 43;
+            this.label13.Text = "Filósofo comiendo";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(25, 381);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(80, 13);
+            this.label14.TabIndex = 44;
+            this.label14.Text = "Filósofo terminó";
+            // 
+            // pictureBox35
+            // 
+            this.pictureBox35.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.terminado;
+            this.pictureBox35.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox35.Location = new System.Drawing.Point(25, 405);
+            this.pictureBox35.Name = "pictureBox35";
+            this.pictureBox35.Size = new System.Drawing.Size(100, 82);
+            this.pictureBox35.TabIndex = 48;
+            this.pictureBox35.TabStop = false;
+            // 
+            // pictureBox34
+            // 
+            this.pictureBox34.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.conhambre;
+            this.pictureBox34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox34.Location = new System.Drawing.Point(25, 171);
+            this.pictureBox34.Name = "pictureBox34";
+            this.pictureBox34.Size = new System.Drawing.Size(100, 82);
+            this.pictureBox34.TabIndex = 47;
+            this.pictureBox34.TabStop = false;
+            // 
+            // pictureBox33
+            // 
+            this.pictureBox33.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.comiendo;
+            this.pictureBox33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox33.Location = new System.Drawing.Point(25, 288);
+            this.pictureBox33.Name = "pictureBox33";
+            this.pictureBox33.Size = new System.Drawing.Size(100, 82);
+            this.pictureBox33.TabIndex = 46;
+            this.pictureBox33.TabStop = false;
+            // 
+            // pictureBox32
+            // 
+            this.pictureBox32.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.pensando;
+            this.pictureBox32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox32.Location = new System.Drawing.Point(25, 54);
+            this.pictureBox32.Name = "pictureBox32";
+            this.pictureBox32.Size = new System.Drawing.Size(100, 82);
+            this.pictureBox32.TabIndex = 45;
+            this.pictureBox32.TabStop = false;
+            // 
+            // pictureBox31
+            // 
+            this.pictureBox31.Location = new System.Drawing.Point(513, 203);
+            this.pictureBox31.Name = "pictureBox31";
+            this.pictureBox31.Size = new System.Drawing.Size(44, 34);
+            this.pictureBox31.TabIndex = 30;
+            this.pictureBox31.TabStop = false;
+            // 
+            // pictureBox30
+            // 
+            this.pictureBox30.Location = new System.Drawing.Point(513, 313);
+            this.pictureBox30.Name = "pictureBox30";
+            this.pictureBox30.Size = new System.Drawing.Size(44, 34);
+            this.pictureBox30.TabIndex = 29;
+            this.pictureBox30.TabStop = false;
+            // 
+            // pictureBox29
+            // 
+            this.pictureBox29.Location = new System.Drawing.Point(513, 413);
+            this.pictureBox29.Name = "pictureBox29";
+            this.pictureBox29.Size = new System.Drawing.Size(44, 34);
+            this.pictureBox29.TabIndex = 28;
+            this.pictureBox29.TabStop = false;
+            // 
+            // pictureBox28
+            // 
+            this.pictureBox28.Location = new System.Drawing.Point(576, 430);
+            this.pictureBox28.Name = "pictureBox28";
+            this.pictureBox28.Size = new System.Drawing.Size(44, 34);
+            this.pictureBox28.TabIndex = 27;
+            this.pictureBox28.TabStop = false;
+            // 
+            // pictureBox27
+            // 
+            this.pictureBox27.Location = new System.Drawing.Point(725, 430);
+            this.pictureBox27.Name = "pictureBox27";
+            this.pictureBox27.Size = new System.Drawing.Size(44, 34);
+            this.pictureBox27.TabIndex = 26;
+            this.pictureBox27.TabStop = false;
+            // 
+            // pictureBox26
+            // 
+            this.pictureBox26.Location = new System.Drawing.Point(783, 413);
+            this.pictureBox26.Name = "pictureBox26";
+            this.pictureBox26.Size = new System.Drawing.Size(44, 34);
+            this.pictureBox26.TabIndex = 25;
+            this.pictureBox26.TabStop = false;
+            // 
+            // pictureBox25
+            // 
+            this.pictureBox25.Location = new System.Drawing.Point(783, 304);
+            this.pictureBox25.Name = "pictureBox25";
+            this.pictureBox25.Size = new System.Drawing.Size(44, 34);
+            this.pictureBox25.TabIndex = 24;
+            this.pictureBox25.TabStop = false;
+            // 
+            // pictureBox24
+            // 
+            this.pictureBox24.Location = new System.Drawing.Point(783, 203);
+            this.pictureBox24.Name = "pictureBox24";
+            this.pictureBox24.Size = new System.Drawing.Size(44, 34);
+            this.pictureBox24.TabIndex = 23;
+            this.pictureBox24.TabStop = false;
             // 
             // pictureBox23
             // 
@@ -308,160 +550,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox24
-            // 
-            this.pictureBox24.Location = new System.Drawing.Point(783, 203);
-            this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(44, 34);
-            this.pictureBox24.TabIndex = 23;
-            this.pictureBox24.TabStop = false;
-            // 
-            // pictureBox25
-            // 
-            this.pictureBox25.Location = new System.Drawing.Point(783, 304);
-            this.pictureBox25.Name = "pictureBox25";
-            this.pictureBox25.Size = new System.Drawing.Size(44, 34);
-            this.pictureBox25.TabIndex = 24;
-            this.pictureBox25.TabStop = false;
-            // 
-            // pictureBox26
-            // 
-            this.pictureBox26.Location = new System.Drawing.Point(783, 413);
-            this.pictureBox26.Name = "pictureBox26";
-            this.pictureBox26.Size = new System.Drawing.Size(44, 34);
-            this.pictureBox26.TabIndex = 25;
-            this.pictureBox26.TabStop = false;
-            // 
-            // pictureBox27
-            // 
-            this.pictureBox27.Location = new System.Drawing.Point(725, 430);
-            this.pictureBox27.Name = "pictureBox27";
-            this.pictureBox27.Size = new System.Drawing.Size(44, 34);
-            this.pictureBox27.TabIndex = 26;
-            this.pictureBox27.TabStop = false;
-            // 
-            // pictureBox28
-            // 
-            this.pictureBox28.Location = new System.Drawing.Point(576, 430);
-            this.pictureBox28.Name = "pictureBox28";
-            this.pictureBox28.Size = new System.Drawing.Size(44, 34);
-            this.pictureBox28.TabIndex = 27;
-            this.pictureBox28.TabStop = false;
-            // 
-            // pictureBox29
-            // 
-            this.pictureBox29.Location = new System.Drawing.Point(513, 413);
-            this.pictureBox29.Name = "pictureBox29";
-            this.pictureBox29.Size = new System.Drawing.Size(44, 34);
-            this.pictureBox29.TabIndex = 28;
-            this.pictureBox29.TabStop = false;
-            // 
-            // pictureBox30
-            // 
-            this.pictureBox30.Location = new System.Drawing.Point(513, 313);
-            this.pictureBox30.Name = "pictureBox30";
-            this.pictureBox30.Size = new System.Drawing.Size(44, 34);
-            this.pictureBox30.TabIndex = 29;
-            this.pictureBox30.TabStop = false;
-            // 
-            // pictureBox31
-            // 
-            this.pictureBox31.Location = new System.Drawing.Point(513, 203);
-            this.pictureBox31.Name = "pictureBox31";
-            this.pictureBox31.Size = new System.Drawing.Size(44, 34);
-            this.pictureBox31.TabIndex = 30;
-            this.pictureBox31.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(515, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 13);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Sócrates está pensando...";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(692, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 13);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Platón está pensando...";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(950, 190);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 13);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Aristóteles está pensando...";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(950, 325);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 13);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Descartes está pensando...";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(950, 451);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 13);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Kant está pensando...";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(692, 555);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(136, 13);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Nietzsche está pensando...";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(529, 555);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(117, 13);
-            this.label7.TabIndex = 37;
-            this.label7.Text = "Hegel está pensando...";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(260, 451);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(127, 13);
-            this.label8.TabIndex = 38;
-            this.label8.Text = "Spinoza está pensando...";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(260, 325);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(119, 13);
-            this.label9.TabIndex = 39;
-            this.label9.Text = "Locke está pensando...";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(260, 190);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(117, 13);
-            this.label10.TabIndex = 40;
-            this.label10.Text = "Hume está pensando...";
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -469,6 +557,14 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1119, 616);
+            this.Controls.Add(this.pictureBox35);
+            this.Controls.Add(this.pictureBox34);
+            this.Controls.Add(this.pictureBox33);
+            this.Controls.Add(this.pictureBox32);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -510,12 +606,25 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filósofos Comensales";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox35)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox34)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox33)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox32)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
@@ -539,14 +648,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox26)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox27)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox28)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox29)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox30)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox31)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -595,5 +696,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.PictureBox pictureBox32;
+        private System.Windows.Forms.PictureBox pictureBox33;
+        private System.Windows.Forms.PictureBox pictureBox34;
+        private System.Windows.Forms.PictureBox pictureBox35;
     }
 }

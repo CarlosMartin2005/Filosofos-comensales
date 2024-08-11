@@ -83,6 +83,16 @@ namespace WindowsFormsApp1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap conhambre {
+            get {
+                object obj = ResourceManager.GetObject("conhambre", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fondo_fc {
             get {
                 object obj = ResourceManager.GetObject("fondo fc", resourceCulture);
@@ -106,6 +116,16 @@ namespace WindowsFormsApp1.Properties {
         internal static System.Drawing.Bitmap fondo_fcom {
             get {
                 object obj = ResourceManager.GetObject("fondo fcom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondofin {
+            get {
+                object obj = ResourceManager.GetObject("fondofin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

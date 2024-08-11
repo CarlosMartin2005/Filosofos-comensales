@@ -89,7 +89,7 @@ namespace WindowsFormsApp1
                 }
             }
             Estado = "Terminado";
-            Console.WriteLine($"{Nombre} ha terminado de comer  y está pensando.");
+            Console.WriteLine($"{Nombre} ha terminado de comer.");
         }
     }
 }

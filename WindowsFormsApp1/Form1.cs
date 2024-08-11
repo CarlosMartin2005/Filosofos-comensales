@@ -28,19 +28,21 @@ namespace WindowsFormsApp1
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
+            // Obtener la cantidad de filósofos ingresada por el usuario
             string cantidad = textBox1.Text;
             try
             {
+                // Verificar si la entrada es un número válido
                 if (int.TryParse(cantidad, out int cantidadint) && cantidadint >= 2 && cantidadint <= 10)
                 {
                     Console.WriteLine("Cantidad de filosofos ingresados: " + cantidadint);
                     MessageBox.Show("Cantidad de filosofos ingresados: " + cantidadint, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.Hide();
-                    Form2 form2 = new Form2(cantidadint);
+                    this.Hide(); // Ocultar Form1
+                    Form2 form2 = new Form2(cantidadint); // Crear una instancia de Form2
                     form2.FormClosed += (s, args) => this.Close(); // Cerrar Form1 cuando Form2 se cierra
 
-                    form2.Show();
+                    form2.Show(); // Mostrar Form2
                 }
                 else
                 {

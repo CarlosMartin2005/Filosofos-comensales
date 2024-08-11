@@ -9,6 +9,7 @@ namespace WindowsFormsApp1
 {
     public class Tenedor
     {
+        // Evento que se dispara cuando el estado cambia
         public event EventHandler EstadoCambiado;
 
         private readonly SemaphoreSlim _semaforo1 = new SemaphoreSlim(1, 1); // Crear semáforo

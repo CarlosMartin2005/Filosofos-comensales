@@ -105,6 +105,7 @@
     <Content Include="Resources\conhambre.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\conhambre1.gif" />
     <Content Include="Resources\filosofo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -118,6 +119,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\mesa.png" />
+    <None Include="Resources\fondofin.png" />
     <Content Include="Resources\mesacircular.png" />
     <None Include="Resources\mesacircular1.png" />
     <None Include="Resources\mesarect.png" />

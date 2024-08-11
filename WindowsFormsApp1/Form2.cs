@@ -128,8 +128,7 @@ namespace WindowsFormsApp1
                 { 9, pictureBox21 }
             };
 
-            // var res = MessageBox.Show("Mostrar los filósofos comensales", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            // Si la lista de tenedores no se ha inicializado, mostrar un mensaje de error
             if (tenedores == null)
             {
                 MessageBox.Show("La lista de tenedores no se ha inicializado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -177,12 +176,14 @@ namespace WindowsFormsApp1
         {
             if (InvokeRequired)
             {
+                // Invocar el método de forma segura
                 this.Invoke((MethodInvoker)delegate { ActualizarUITenedor(tenedor, pictureBox); });
             }
             else
             {
                 if (tenedor.disponible == 0)
                 {
+                    // Mostrar la imagen del tenedor
                     pictureBox.Image = Image.FromFile("Resources\\tenedor.png");
                     pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                     pictureBox.Visible = true;
@@ -191,6 +192,7 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
+                    // Mostrar la imagen del tenedor ocupado
                     pictureBox.Visible = true;
                     pictureBox.BackColor = Color.Red;
                     pictureBox.BringToFront();
@@ -242,7 +244,7 @@ namespace WindowsFormsApp1
             for (int i = 0; i < cantidadFilosofos; i++)
             {
                 Tenedor tenedorIzquierdo = tenedores[i];
-                Tenedor tenedorDerecho = tenedores[(i + 1) % cantidadFilosofos];
+                Tenedor tenedorDerecho = tenedores[(i + 1) % cantidadFilosofos]; // El módulo se utiliza para el último filósofo
                 int cantidadComida = SolicitarCantidadComida(nombresFilosofos[i]);
                 Filosofo filosofo = new Filosofo(i + 1, nombresFilosofos[i], cantidadComida, tenedorIzquierdo, tenedorDerecho);
 
@@ -308,7 +310,7 @@ namespace WindowsFormsApp1
                 {
                     pictureBoxPlato.Image = Image.FromFile("Resources\\plato_vacio.png");
                 }
-
+                // Ajustar la imagen al PictureBox
                 pictureBoxPlato.SizeMode = PictureBoxSizeMode.StretchImage;
                 pictureBoxPlato.BringToFront();
             }
